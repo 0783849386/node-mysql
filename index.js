@@ -6,6 +6,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'pug');
+app.set('port', process.env.PORT || 8080);
 app.set('views', './views');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
@@ -105,7 +106,7 @@ app.get("/demo", function(req, res){
 	if(err) throw err;
 	res.sendfile("demo.html");
 });
-const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log("Server is running on port " + port);
 });
