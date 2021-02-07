@@ -11,11 +11,12 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
 // for parsing application/x-www-form-urlencoded
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'db_qlsv'
+  host: 'us-cdbr-east-03.cleardb.com',
+  user: 'b7b46ecbfbd8de',
+  password: '5c6af83f',
+  database: 'heroku_a2bddb14770b4a9'
 });
+
 connection.connect(function(err){
 		if(err) throw err;
 		console.log('MySQL Connected...');
