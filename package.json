@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0783849386/node-mysql.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0783849386/node-mysql/issues"
+  },
+  "homepage": "https://github.com/0783849386/node-mysql#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
