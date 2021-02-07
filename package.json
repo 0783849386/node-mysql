@@ -1,36 +1,22 @@
 {
-  "name": "node_mysql",
+  "name": "y",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+	"start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/0783849386/node-mysql.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/0783849386/node-mysql/issues"
-  },
-  "homepage": "https://github.com/0783849386/node-mysql#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "html": "^1.0.0",
-    "lowdb": "^1.0.0",
     "md5": "^2.3.0",
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
-    "pug": "^3.0.0",
-    "shortid": "^2.2.16"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
+    "pug": "^3.0.0"
   }
 }
