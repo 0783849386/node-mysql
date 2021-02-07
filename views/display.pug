@@ -1,0 +1,31 @@
+extends ./common
+block content
+	h1 Information users
+	table.table.table-bordered
+		each sv in sinhvien
+			tr
+				td(class='id')= sv.id
+				td(class='fullname')= sv.fullname
+				td(class='age')= sv.age
+				td(class='address')= sv.address
+				td
+					button(class='update-id' data-id=sv.id data-fullname=sv.fullname data-age=sv.age data-address=sv.address) update
+				td
+					button(class='idx' data-id=sv.id) delete
+	div(id='id01' class='modal')
+		form(class='modal-content animate' action='/update' method='post')
+			div(class='container')
+				input(type='text' id='btn-id' style='display: none' name='id')
+
+				label(for='unmae') FullName 
+				input(type='text' id='fullname' placeholder="Enter username" name='fullname')
+
+				label(for='age') Age 
+				input(type='text' id='age' placeholder='Enter age' name='age')
+
+				label(for='add') Address 
+				input(type='text' id='address' placeholder='Enter address' name='address')
+
+				button.btn   Update
+	script
+		include ../controllers/del.js

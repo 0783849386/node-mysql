@@ -1,0 +1,19 @@
+html
+	head
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+		link(rel='stylesheet', href="./display1.css")
+		script(src="https://unpkg.com/axios/dist/axios.min.js")
+	body
+		nav.navbar.navbar-expand-lg.navbar-light.bg-light
+			a.navbar-brand(href='/showStudent') Menu
+			#navbarNav.collapse.navbar-collapse
+				ul.navbar-nav
+					li.nav-item
+						a.nav-link(href='/createSinhVien') Home
+					li.nav-item
+						a.nav-link(href='/createStudent') Create
+					li.nav-item
+						a.nav-link(href='/users/search') Search
+			if user
+				p= user.name
+		block content
