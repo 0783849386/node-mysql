@@ -17,9 +17,10 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err){
-		if(err) throw err;
-		console.log('MySQL Connected...');
-	});
+	if(err) throw err;
+	console.log('MySQL Connected...');
+	connection.query('Select * from sinhvien');
+});
 app.get("/", function(req, res){
 	res.send("<h2>Hello Vi Van Dat</h2>");
 });
