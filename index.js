@@ -20,7 +20,6 @@ var connection = mysql.createConnection({
 connection.connect(function(err){
 		if(err) throw err;
 		console.log('MySQL Connected...');
-		
 	});
 app.get("/", function(req, res){
 	res.send("<h2>Hello Vi Van Dat</h2>");
