@@ -18,7 +18,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err){
-		if(err) throw err;
+		//if(err) throw err;
 		console.log('MySQL Connected...');
 	});
 app.get("/", function(req, res){
@@ -27,7 +27,7 @@ app.get("/", function(req, res){
 app.get("/showStudent", function(req, res){
 	
 	connection.query('Select * from sinhvien', function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		res.render("display", {
 			sinhvien: result
 		});
@@ -35,7 +35,7 @@ app.get("/showStudent", function(req, res){
 });
 app.get("/sinhvien", function(req, res){
 	connection.query('Select * from sinhvien', function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		res.render("display", {
 			sinhvien: result
 		});
@@ -43,7 +43,7 @@ app.get("/sinhvien", function(req, res){
 });
 app.get("/show", function(req, res){
 	connection.query('Select * from sinhvien', function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		res.render("display", {
 			sinhvien: result
 		});
@@ -58,7 +58,7 @@ app.post("/createSinhVien", function(req, res){
 	//console.log(sql);
 	
 	connection.query(sql, function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		console.log('1 record inserted');
 	});
 	res.redirect("/showStudent");
@@ -73,7 +73,7 @@ app.post("/createStudent", function(req, res){
 	//console.log(sql);
 	
 	connection.query(sql, function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		console.log('1 record inserted');
 	});
 	res.redirect("/showStudent");
