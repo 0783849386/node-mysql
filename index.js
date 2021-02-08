@@ -51,21 +51,6 @@ app.get("/show", function(req, res){
 		});
 	});
 });
-// tạo form để thêm 1 sinh viên
-app.get("/createSinhVien", function(req, res){
-		if(err) throw err;
-		 res.sendFile('demo.html', {root: __dirname });
-});
-app.post("/createSinhVien", function(req, res){
-	var sql = "INSERT INTO sinhvien (fullname, age, address) VALUES ('"+ req.body.fullname +"', '"+ req.body.age +"', '"+ req.body.address +"')";
-	
-	connection.query(sql, function(err, result){
-		//if(err) throw err;
-		console.log('1 record inserted');
-	});
-	res.redirect("/showStudent");
-});
-
 app.get("/createStudent", function(req, res){
 		//if(err) throw err;
 		res.render('create');
