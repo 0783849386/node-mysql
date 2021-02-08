@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 
 
 var connection = mysql.createConnection({
-  host: 'http://sql12.freemysqlhosting.net',
+  host: 'sql12.freemysqlhosting.net',
   user: 'sql12391516',
   password: 'jTDiLRyEKn',
   database: 'sql12391516'
