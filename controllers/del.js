@@ -37,7 +37,7 @@ window.onclick = function(event) {
       deleteSinhVien(id);
   }
     function deleteSinhVien(id){
-      axios.delete('http://localhost:3000/sinhvien/'+id, {}).then(function(res){
+      axios.delete('https://vivandat.herokuapp.com/sinhvien/'+id, {}).then(function(res){
             console.log("Deleted!");
       });
     }
@@ -67,7 +67,7 @@ window.onclick = function(event) {
     //   });
     // }
     function loadData(){
-        axios.get('http://localhost:3000/sinhvien/', {}).then(function(res){
+        axios.get('https://vivandat.herokuapp.com/sinhvien/', {}).then(function(res){
             console.log("Deleted!");
         });
     }
