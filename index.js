@@ -24,7 +24,7 @@ connection.connect(function(err){
 
 
 app.get("/", function(req, res){
-	res.send("<h2>Hello Vi Van Dat</h2>");
+	res.redirect("/showStudent");
 });
 app.get("/showStudent", function(req, res){
 	
