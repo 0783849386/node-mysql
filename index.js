@@ -8,7 +8,8 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) 
-// for parsing application/x-www-form-urlencoded
+
+
 var connection = mysql.createConnection({
   host: 'us-cdbr-east-03.cleardb.com',
   user: 'b7b46ecbfbd8de',
@@ -17,9 +18,11 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err){
-		if(err) throw err;
-		console.log('MySQL Connected...');
+	if(err) throw err;
+	console.log('MySQL Connected...');
 });
+
+
 app.get("/", function(req, res){
 	res.send("<h2>Hello Vi Van Dat</h2>");
 });
@@ -57,14 +60,14 @@ app.post("/createSinhVien", function(req, res){
 	var sql = "INSERT INTO sinhvien (fullname, age, address) VALUES ('"+ req.body.fullname +"', '"+ req.body.age +"', '"+ req.body.address +"')";
 	
 	connection.query(sql, function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		console.log('1 record inserted');
 	});
 	res.redirect("/showStudent");
 });
 
 app.get("/createStudent", function(req, res){
-		if(err) throw err;
+		//if(err) throw err;
 		res.render('create');
 	});
 // var sql = "insert into sinhvien values ('123','Shu Chang', 'kl')";
@@ -73,7 +76,7 @@ app.post("/createStudent", function(req, res){
 	//console.log(sql);
 	
 	connection.query(sql, function(err, result){
-		if(err) throw err;
+		//if(err) throw err;
 		console.log('1 record inserted');
 	});
 	res.redirect("/showStudent");
@@ -103,7 +106,7 @@ app.get("/demo", function(req, res){
 	if(err) throw err;
 	res.sendfile("demo.html");
 });
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log("Server is running on port " + port);
 });
