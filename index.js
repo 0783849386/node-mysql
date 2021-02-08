@@ -11,10 +11,10 @@ app.use(express.urlencoded({ extended: true }))
 
 
 var connection = mysql.createConnection({
-  host: 'us-cdbr-east-03.cleardb.com',
-  user: 'b7b46ecbfbd8de',
-  password: '5c6af83f',
-  database: 'heroku_a2bddb14770b4a9'
+  host: 'http://sql12.freemysqlhosting.net',
+  user: 'sql12391516',
+  password: 'jTDiLRyEKn',
+  database: 'sql12391516'
 });
 
 connection.connect(function(err){
@@ -92,7 +92,7 @@ var port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log("Server is running on port " + port);
 });
-		
+
 	}
 });
 
