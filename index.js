@@ -17,17 +17,18 @@ var connection = mysql.createConnection({
   database: 'heroku_a2bddb14770b4a9'
 });
 
-connection.connect(function(err){
-	if(err) throw err;
-	console.log('MySQL Connected...');
-});
+// connection.connect(function(err){
+// 	if(err) throw err;
+// 	console.log('MySQL Connected...');
+// });
 
 
 app.get("/", function(req, res){
+	connection.connect();
 	res.redirect("/showStudent");
 });
 app.get("/showStudent", function(req, res){
-	
+	connection.connect();
 	connection.query('Select * from sinhvien', function(err, result){
 		if(err) throw err;
 		res.render("display", {
@@ -36,6 +37,7 @@ app.get("/showStudent", function(req, res){
 	});
 });
 app.get("/sinhvien", function(req, res){
+	connection.connect();
 	connection.query('Select * from sinhvien', function(err, result){
 		if(err) throw err;
 		res.render("display", {
@@ -44,6 +46,7 @@ app.get("/sinhvien", function(req, res){
 	});
 });
 app.get("/show", function(req, res){
+	connection.connect();
 	connection.query('Select * from sinhvien', function(err, result){
 		if(err) throw err;
 		res.render("display", {
@@ -59,7 +62,7 @@ app.get("/createStudent", function(req, res){
 app.post("/createStudent", function(req, res){
 	var sql = "INSERT INTO sinhvien (fullname, age, address) VALUES ('"+ req.body.fullname +"', '"+ req.body.age +"', '"+ req.body.address +"')";
 	//console.log(sql);
-	
+	connection.connect();
 	connection.query(sql, function(err, result){
 		//if(err) throw err;
 		console.log('1 record inserted');
@@ -70,6 +73,7 @@ app.post("/createStudent", function(req, res){
 //Delete 1 sinh vien
 app.delete('/sinhvien/:id', function(req, res){
 	var sql = 'delete from sinhvien where id = ?';
+	connection.connect();
 	connection.query(sql,[req.params.id], function(err,rows, fileds){
 		if(err) throw err;
 	});
@@ -82,6 +86,7 @@ app.post('/update', function(req, res){
 	var address = req.body.address;
 	//console.log(id);
 	var sql = "update sinhvien set fullname = ?, age = ?, address = ? where id = ?";
+	connection.connect();
 	connection.query(sql,[fullname, age, address, id], function(err,rows, fileds){
 		if(err) throw err;
 	});
